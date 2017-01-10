@@ -1,0 +1,17 @@
+# Setup
+title:        GaTech UCouncil
+tagline:      Georgia Tech College of Computing Student Organizations Council
+baseurl:      ""
+paginate:     1
+
+# About/contact
+author:
+  name:       Brian Murphy
+  url:        http://github.com/brain-murphy 
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown

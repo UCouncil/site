@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>UCouncil - Coc Orgs Weekly</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">UCouncil</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html" class="active">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+              <h1 class="major">CoC Orgs Weekly Documentation</h1>
+              <p>Every week, the CoC Orgs Weekly newsletter is sent out to the
+              CoC community with information on how to get involved in the
+              community - org meetings, events, opportunities.
+              This newsletter is managed by the UCouncil officers. This page
+              describes how it works and how you can modify that.
+              functionality.</p>
+
+              <h3>Summer/Winter is here. How do I disable it?</h3>
+              <p>Go into "CoC Orgs Newsletter Builder" and change the variable <code>SCHOOL_IN_SESSION</code> to <code>false</code>.</p>
+
+              <h3>How does it work?</h3>
+              <p>The newsletter lives in the
+              <code>ucouncilgatech@gmail.com</code>'s Google Drive, in a folder
+              named <code>CoC Orgs Weekly</code>. In it, there are some google
+              forms, some google sheets, and a google scripts file.<br/>
+              Anyone can use the forms to submit new information about their
+              org's meeting for that week, big events, or opportunities for
+              getting involved. Those submissions are placed in their
+              respective google sheets. For instance, "New CoC Orgs Meeting"
+              creates a row in "New CoC Org Meeting (Responses)". These are
+              reset every week after the newsletter is sent out.<br/>
+              Additionally, the "Default Org Meetings" has the default
+              information for each org's weekly meetings.</p>
+              <p>The google scripts code in "CoC Orgs Newsletter Builder" is
+              the main code for creating the newsletter.
+              It includes two triggers: one that runs the function
+              <code>main_verify</code> every Sunday between 7-8pm, and one that
+              runs <code>main</code> every Monday between 6-7am.<br/>
+              <code>main_verify</code> will use the information in all the
+              google sheets to create the newsletter and send it to the
+              <code>VERIFIER_EMAIL</code>. This function will <b>not</b> modify
+              any sheets files. <code>main</code> will do the same, but it'll
+              send the newsletter to <code>MAILING_LIST</code> and <b>will</b>
+              erase everything from the "(Responses)" sheets (but not from the
+              Defaults sheet).</p>
+
+              <h3>What's the point of the verifier email?</h3>
+              <p>Because the forms are open to anyone, there can be abuse.
+              It's the verifier's responsibility to check the newsletter on
+              Sunday evenings to make sure nothing bad will be sent out on
+              Monday mornings. This has to be someone with access to the 
+              <code>ucouncilgatech@gmail.com</code> Drive, which means the
+              verifier will most likely be a UCouncil officer.</p>
+
+              <h3>What should MAILING_LIST email be?</h3>
+              <p>Someone who has access to one of the CoC sympa email lists,
+              like <code>cc-news-and-events</code>. Today, that person is
+              Alyshia Jackson, who will receive the mailing list and forward it
+              to <code>cc-news-and-events</code>. If you don't know who this
+              email should be, ask OEC.</p>
+
+              <h3>How are org meetings selected from Default/Responses sheets?</h3>
+              <p>Form responses take precendence, and the form can be submitted
+              multiple times. So, if an org submits the form three times, there
+              will be three meetings for the org listed in the newsletter. If
+              the org hasn't submitted the form, then their meetings are taken
+              from the Default sheet. The order that meetings appear is
+              determined by: whether the org submitted the Meetings form, and
+              when they did so. Orgs that submitted the Meetings form will
+              appear at the top of the list, in the same order they submitted
+              the form. Orgs for all other orgs, their position in the list is
+              randomized.</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
